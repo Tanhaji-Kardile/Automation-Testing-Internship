@@ -1,0 +1,188 @@
+newman
+
+E-Commerce Product API Testing
+
+□ 1. Authentication / Login
+└ Login User
+  POST https://fakestoreapi.com/auth/login [201 Created, 833B, 580ms]
+  √  Status code is successful
+  √  Token is present in response
+  √  Response time is less than 2000ms
+
+□ 2. Products / Get All Products
+└ 1.Get All request
+  GET https://fakestoreapi.com/products [200 OK, 11.35kB, 374ms]
+  √  Status code is 200
+  √  Response time is less than 2000ms
+  √  Response is an array
+  √  Products list is not empty
+  √  First product contains ID
+  √  First product contains Title
+  √  First product contains Price
+
+□ 2. Products / Get Single Product
+└ 2.Get single product
+  GET https://fakestoreapi.com/products/1 [200 OK, 1.07kB, 251ms]
+  √  Status code is 200
+  √  Response time is less than 2000ms
+  √  Product ID matches requested ID
+  √  Product contains title
+  √  Product contains price
+  √  Product contains category
+  √  Product contains rating
+
+□ 2. Products / Add New Product
+└ 3.Add New Product
+  POST https://fakestoreapi.com/products [201 Created, 819B, 245ms]
+  √  Status code is successful
+  √  Response time is less than 2000ms
+  √  Response contains ID
+  √  Title matches request
+  √  Price matches request
+  √  Category matches request
+
+□ 2. Products / Update Product (PUT)
+└ 4.Update Product (PUT)
+  PUT https://fakestoreapi.com/products/1 [200 OK, 857B, 246ms]
+  √  Status code is successful
+  √  Response time is less than 2000ms
+  √  Product ID exists
+  √  Title updated successfully
+  √  Price updated successfully
+  √  Category updated successfully
+
+□ 2. Products / Update Product (PATCH)
+└ 5.Update Product (PATCH)
+  PATCH https://fakestoreapi.com/products/1 [200 OK, 691B, 244ms]
+  √  Status code is successful
+  √  Response time is less than 2000ms
+  √  Product ID exists
+  √  Price updated successfully
+
+□ 2. Products / Delete Product
+└ 6.Delete Product
+  DELETE https://fakestoreapi.com/products/1 [200 OK, 1.07kB, 245ms]
+  √  Status code is successful
+  √  Response time is less than 2000ms
+  √  Deleted product contains ID
+  √  Deleted product ID matches request
+
+□ 3. Categories / Get All Categories
+└ 1.Get All Categories
+  GET https://fakestoreapi.com/products/categories [200 OK, 767B, 247ms]
+  √  Status code is 200
+  √  Response time is less than 2000ms
+  √  Response is an array
+  √  Categories list is not empty
+  √  First category is a string
+
+□ 3. Categories / Get Products in Category
+└ 2.Get Products in Category
+  GET https://fakestoreapi.com/products/category/electronics [200 OK, 4.34kB, 254ms]
+  √  Status code is 200
+  √  Response time is less than 2000ms
+  √  Response is an array
+  √  Products list is not empty
+  √  Products belong to electronics category
+
+□ 4. Cart / Get All Carts
+└ 1.Get All Carts
+  GET https://fakestoreapi.com/carts [200 OK, 1.63kB, 351ms]
+  √  Status code is 200
+  √  Response time is less than 2000ms
+  √  Response is an array
+  √  Cart list is not empty
+  √  First cart contains ID
+  √  First cart contains userId
+  √  First cart contains products
+
+□ 4. Cart / Get Single Cart
+└ 2.Get Single Cart
+  GET https://fakestoreapi.com/carts/1 [200 OK, 864B, 351ms]
+  √  Status code is 200
+  √  Response time is less than 2000ms
+  √  Cart ID matches requested ID
+  √  Cart contains userId
+  √  Cart contains products
+  √  Products array is not empty
+
+□ 4. Cart / Add to Cart
+└ 3.Add to Cart
+  POST https://fakestoreapi.com/carts [201 Created, 758B, 255ms]
+  √  Status code is successful
+  √  Response time is less than 2000ms
+  √  Cart ID exists
+  √  User ID matches request
+  √  Products array exists
+  √  Product ID matches request
+
+□ 4. Cart / Update Cart / Update Cart (PUT)
+└ 1.Update Cart (PUT)
+  PUT https://fakestoreapi.com/carts/1 [200 OK, 780B, 250ms]
+  √  Status code is successful
+  √  Response time less than 2000ms
+  √  Cart ID exists
+  √  User ID updated correctly
+  √  Product ID updated correctly
+  √  Quantity updated correctly
+
+□ 4. Cart / Update Cart / Update Cart (PATCH)
+└ 2,Update Cart (PATCH)
+  PATCH https://fakestoreapi.com/carts/1 [200 OK, 760B, 250ms]
+  √  Status code is successful
+  √  Response time less than 2000ms
+  √  Cart ID exists
+  √  Products array exists
+  √  Product ID matches
+  √  Quantity updated successfully
+
+□ 4. Cart / Delete Cart
+└ 5.Delete Cart
+  DELETE https://fakestoreapi.com/carts/1 [200 OK, 866B, 353ms]
+  √  Status code is successful
+  √  Response time is less than 2000ms
+  √  Deleted cart contains ID
+  √  Deleted cart ID matches request
+  √  Deleted cart contains userId
+
+□ 5. Users / Get All Users
+└ 1.Get All Users
+  GET https://fakestoreapi.com/users [200 OK, 3.7kB, 357ms]
+  √  Status code is 200
+  √  Response time less than 2000ms
+  √  Response is an array
+  √  Users list is not empty
+  √  First user contains ID
+  √  First user contains username
+  √  First user contains email
+
+□ 5. Users / Get Single User
+└ 2.Get Single User
+  GET https://fakestoreapi.com/users/1 [200 OK, 998B, 350ms]
+  √  Status code is 200
+  √  Response time less than 2000ms
+  √  User ID matches request
+  √  User contains username
+  √  User contains email
+  √  User contains name object
+  √  First name exists
+
+┌─────────────────────────┬────────────────────┬────────────────────┐
+│                         │           executed │             failed │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              iterations │                  1 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│                requests │                 17 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│            test-scripts │                 17 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│      prerequest-scripts │                  0 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              assertions │                 97 │                  0 │
+├─────────────────────────┴────────────────────┴────────────────────┤
+│ total run duration: 6.8s                                          │
+├───────────────────────────────────────────────────────────────────┤
+│ total data received: 20.28kB (approx)                             │
+├───────────────────────────────────────────────────────────────────┤
+│ average response time: 306ms [min: 244ms, max: 580ms, s.d.: 85ms] │
+└───────────────────────────────────────────────────────────────────┘
