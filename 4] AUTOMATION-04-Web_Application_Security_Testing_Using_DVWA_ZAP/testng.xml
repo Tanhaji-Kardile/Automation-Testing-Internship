@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="DVWA Security Testing Suite" parallel="none">
+
+    <listeners>
+        <listener class-name="utilities.ExtentListener"/>
+    </listeners>
+
+    <test name="Login Test">
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="SQL Injection Test">
+        <classes>
+            <class name="tests.SQLInjectionTest"/>
+        </classes>
+    </test>
+
+    <test name="XSS Test">
+        <classes>
+            <class name="tests.XSSTest"/>
+        </classes>
+    </test>
+
+    <test name="Security Scan Test">
+        <classes>
+            <class name="tests.SecurityScanTest"/>
+        </classes>
+    </test>
+
+</suite>
