@@ -219,7 +219,7 @@ newman run E-Commerce_Product_API_Testing.postman_collection.json -e FakeStore_E
 ---
 
 ## Project Structure
-
+```text
 AUTOMATION-02_E-Commerce_Product_API_Testing_FakeStoreAPI
 │
 ├── 01_Project_Introduction
@@ -283,6 +283,7 @@ AUTOMATION-02_E-Commerce_Product_API_Testing_FakeStoreAPI
 ├── .gitignore
 │
 └── README.md
+```
 
 ---
 
